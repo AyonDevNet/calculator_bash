@@ -7,44 +7,46 @@ read -p "Enter first number: " num1
 read -p "Enter second number: " num2
 
 
-#main function area
-add() {
+ #main function area
+ add() {
 
        echo "Result" $(($1+$2))
 
-}
-subtreaction() {
+ }
+ subtreaction() {
 
        echo "Result" $(($1-$2))
 
-}
-multi() {
+ }
+ multi() {
 
        echo "Result" $(($1*$2))
 
-}
-divided() {
+ }
+ divide() {
        
        if [ $2 -eq 0 ]; then
          echo "this is invalid"
        else
-            echo "Result " $($1/$2)
-   
-}
+            echo "Result " $(($1/$2))
+   fi
+ }
 
- if [ $operation = add]; then
+ # Perform the chosen operation
+
+ if [ "$operation" = add ]; then
      add $num1 $num1
 
- elif [ $operation = subtreaction]; then
+ elif [ "$operation" = subtreaction ]; then
      subtreaction $num1 $num2
  
- elif [ $operation = multi]; then
+ elif [ "$operation" = multi ]; then
      multi $num1 $num2
- elif [ $operation = divided]; then
-     divided $num1 $num2
+ elif [ "$operation" = divided ]; then
+     divide $num1 $num2
  else 
      echo "Invalid operation"
-  fi
+ fi
 
 
 
